@@ -14,12 +14,10 @@ class StudentServiceTest {
         studentService.addNewStudent(newStudent);
 
         assertThrows(IllegalStateException.class, () -> studentService.getStudentById("123"));
-
-        //assertEquals(savedStudent, studentService.getStudentById(savedStudent.id()));
     }
 
     @Test
-    void getStudentById_whenStudent() {
+    void getStudentById_whenExistStudent_ThenStudent() {
         StudentRepo studentRepo = new StudentRepo();
 
         Student expected = studentRepo.save(new Student("123", "Florian", "Geschichte"));
